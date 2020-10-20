@@ -1,0 +1,55 @@
+  
+{% extends 'base.html' %}
+
+<!-- header title block -->
+{% block header_title%} View Item {% endblock%}
+
+<!-- actions block -->
+{% block actions %} {% endblock %}
+<!-- content block -->
+{% block content %}
+<div class="container-fluid">
+  <h1 class="py-4"></h1>
+  <h4 class="py-4"></h4>
+  <div class="container py-2">
+    <div class="row justify-content-between">
+      <div class="col-md-8 mb-3">
+        <h3>Items</h3>
+      </div>
+
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-md-12 mb-3">
+        {% if items %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for i  in items %}
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{i.title}}</td>
+              <td>{{i.description}}</td>
+              <td>
+              
+             
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <h5>This list has no items.</h5>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock%}
+

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block title %}Sort Items{% endblock %}
+
+{% block content %}
+    <main class="container signup-section">
+        <div class="section-content">
+            <h2>Sort Items</h2>
+            
+            <form method="POST" >
+
+
+                <div class="form-group">
+                    {{ form.title.label }}
+                    {{ form.title() }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label }}
+                    {{ form.description() }}
+                </div>
+                
+              
+                <p>
+                    <input type="submit" value="descending_items" />
+                </p>
+                <p>
+                    <input type="submit" value="ascending_items" />
+                </p>
+            
+            
+               
+
+
+            </form>
+        </div>
+            {% for i in ascending_items  %}
+            <p>Title:{{i.title }}</p>  
+            <p>Description:{{i.description}}</p>  
+            <p>price:{{i.price}}</p>  
+
+            {% endfor %}             
+                     
+        </div>
+    
+    </main>
+{% endblock %}
